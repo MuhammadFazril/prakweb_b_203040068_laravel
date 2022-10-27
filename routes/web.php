@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
 
 
 Route::get('/', function () {
@@ -38,19 +35,8 @@ Route::get('/about', function () {
 //     $blog_post = [
 //     ];
 
-    return view('posts', function() {
-        return view('posts', [
-        "title" => "Posts",
-        "posts" => Post::all()
-    ]);
-});
+Route::get('/posts', [PostController::class], 'index');
 
 
 // halaman single post
-Route::get('post/{slug}', function($slug) {
- 
-    return view('post', [ 
-        "title" => "Single Post",
-        "post" => Post::find($slug)
-    ]);
-});
+Route::get('post/{slug}', [PostController::class, 'show']);
