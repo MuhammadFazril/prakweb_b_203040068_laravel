@@ -26,7 +26,7 @@ Route::get('/about', function () {
     return view('about', [
         "title" => "About",
         "name"  => "Muhammad Fazril",
-        "email" => "arielff54@gmail.com",
+        "email" => "203040068@mail.unpas.ac.id",
         "image" => "fazril.jpg"
     ]);
 });
@@ -36,7 +36,5 @@ Route::get('/about', function () {
 //     ];
 
 Route::get('/posts', [PostController::class], 'index');
-
-
 // halaman single post
-Route::get('post/{slug}', [PostController::class, 'show']);
+Route::get('post/{post:slug}', [PostController::class, 'show']);
