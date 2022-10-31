@@ -59,5 +59,4 @@ Route::get('/authors/{author:username}', function (User $author) {
         'title' => "Post By Author : $author->name",
         'posts' => $author->posts->load('category', 'author'),
     ]);
-}); 
-
+});
