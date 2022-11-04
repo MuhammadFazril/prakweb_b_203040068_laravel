@@ -13,7 +13,7 @@
     {{-- My Style --}}
     <link rel="stylesheet" href="/css/style.css">
 
-    <title>WPU Blog | {{ $title }}</title>
+    <title>Fazril | {{ $title }}</title>
   </head>
   <body>
 
